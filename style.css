@@ -1,0 +1,41 @@
+.volumed{
+float: left;
+
+
+}
+
+.sped{
+    float: right;
+    
+}   
+
+
+.image {
+width: 200px;
+border-radius: 100px;
+
+}  
+
+.heading{
+font-size: 25px;
+width: 100%;
+margin: 0px;
+
+}
+
+#nte{
+font-size: 15px;
+color: black;
+
+}
+
+#ply{
+font-size:25px ;
+width: 120px;
+
+}
+
+body{
+background-size: cover;
+
+}
