@@ -7,6 +7,10 @@ leftWristy=0
 rightWristx=0
 rightWristy=0
 
+scorelftwrist=0
+status1=""
+status2=""
+
 
 function preload() {
 song1=loadSound("blanspace.mp3")
@@ -26,6 +30,22 @@ posenet.on('pose',gotPoses)
 
 function draw(){
 image(video,0,0,600,430)
+status1=song1.isPlaying()
+  status2=song2.isPlaying()
+
+if (scoreleftwrist>0.2) {
+  circle(leftWristx,leftWristy,30)
+song1.stop()
+if (status2==false) {
+  song2.play()
+  document.getElementById("display").innerHTML="played-Radioactive"
+  
+}
+
+  
+}
+
+
 
 
 }
@@ -43,8 +63,11 @@ function modelLoaded(){
     
         rightWristx=results[0].pose.rightWrist.x
         rightWristy=results[0].pose.rightWrist.y
+        scoreleftwrist=results[0].pose.keypoints[9].score
+
     
     console.log(leftWristx,leftWristy,rightWristx,rightWristy)
+
       } 
       
     
